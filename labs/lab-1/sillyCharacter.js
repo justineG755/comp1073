@@ -35,7 +35,7 @@ display the character's attributes in a creative and humorous way.
 
 //DECLARE AND INTIALIZE VARIABLES
 let characterName = "Mr. Nugget"; //string
-let age = Math.floor(Math.random() * 100) + 1; //random number 
+let age = 21; // number 
 let isSuperhero = true; //boolean
 let specialPowers = ["flying", "super speed", "super strength", "teleportation", "telekinesis"]; //array
 let favouriteFood = "pizza"; //string
@@ -43,6 +43,9 @@ let favouriteFood = "pizza"; //string
 
 //FUNCTION TO GENERATE A RANDOM CHARACTER DESCRIPTION
 function generateCharacterDescription() {
+
+    //generates a randon number for age
+    age = Math.floor(Math.random() * 100) + 1
 
     //picks a random power from the specialPowers array     
     let randomPower = specialPowers[Math.floor(Math.random() * specialPowers.length)];
@@ -54,19 +57,15 @@ function generateCharacterDescription() {
     if (randomPower === "flying") {
         powerDescription = "fly faster than light";
     }
-
     else if (randomPower === "super speed") {
         powerDescription = "run across the city in 10 seconds";
     }
-
     else if (randomPower === "super strength") {
         powerDescription = "lift 20 school buses";
     }
-
     else if (randomPower === "teleportation") {
         powerDescription = "teleport whenever they sneeze";
     }
-
     else if (randomPower === "telekinesis") {
         powerDescription = "move objects using only brain power";
     }
@@ -82,6 +81,7 @@ function generateCharacterDescription() {
 }
 
 //FUNCTION TO UPDATE CHARACTERS AGE
+
 
 
 

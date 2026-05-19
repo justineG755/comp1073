@@ -32,11 +32,10 @@ display the character's attributes in a creative and humorous way.
 
 */
 
-//STEP ONE
+
 // Declare and initialize variables
 let characterName = "Mr. Nugget"; //string
-//STEP THREE
-let age = Math.floor(Math.random() * 100) + 1; //number 
+let age = Math.floor(Math.random() * 100) + 1; //random number 
 let isSuperhero = true; //boolean
 let specialPowers = ["flying", "super speed", "super strength", "teleportation", "telekinesis"]; //array
 let favouriteFood = "pizza"; //string
@@ -45,7 +44,7 @@ let favouriteFood = "pizza"; //string
 // Function to generate a random character description
 
 
-//STEP THREE
+
 // Functions to update character's age
 
 

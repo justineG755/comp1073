@@ -54,4 +54,3 @@ let favouriteFood = "pizza"; //string
 
 
 // Add event listeners for buttons using querySelector
-

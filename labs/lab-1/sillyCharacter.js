@@ -33,7 +33,7 @@ display the character's attributes in a creative and humorous way.
 */
 
 
-// Declare and initialize variables
+//DECLARE AND INTIALIZE VARIABLES
 let characterName = "Mr. Nugget"; //string
 let age = Math.floor(Math.random() * 100) + 1; //random number 
 let isSuperhero = true; //boolean
@@ -41,25 +41,54 @@ let specialPowers = ["flying", "super speed", "super strength", "teleportation",
 let favouriteFood = "pizza"; //string
 
 
-// Function to generate a random character description
+//FUNCTION TO GENERATE A RANDOM CHARACTER DESCRIPTION
 function generateCharacterDescription() {
 
+    //picks a random power from the specialPowers array     
+    let randomPower = specialPowers[Math.floor(Math.random() * specialPowers.length)];
+
+    //variable for power description     
+    let powerDescription = "";
+
+    //power descriptions for each power     
+    if (randomPower === "flying") {
+        powerDescription = "fly faster than light";
+    }
+
+    else if (randomPower === "super speed") {
+        powerDescription = "run across the city in 10 seconds";
+    }
+
+    else if (randomPower === "super strength") {
+        powerDescription = "lift 20 school buses";
+    }
+
+    else if (randomPower === "teleportation") {
+        powerDescription = "teleport whenever they sneeze";
+    }
+
+    else if (randomPower === "telekinesis") {
+        powerDescription = "move objects using only brain power";
+    }
+
     //create a character description (concantenation)
-    let description = "This is " + characterName + ", a " + age + "-year-old superhero who loves " + favouriteFood + " and has the power of " + specialPowers[0] + "!";
+    let description = "This is " + characterName + ", a " + age + "-year-old superhero who loves " + favouriteFood + " and can " + powerDescription + "!";
 
     //display the description on the webpage
     document.querySelector("#characterDescription").textContent = description;
 
+    //used to test 
+    console.log(randomPower);
 }
 
-// Functions to update character's age
-
+//FUNCTION TO UPDATE CHARACTERS AGE
 
 
 
 // Function to update the character's description after changing age
 
 
-// Add event listeners for buttons using querySelector
+// ADD EVENT LISTENERS FOR BUTTONS USING QUERYSELECTOR
 //runs the character description function when the generate button is clicked
 document.querySelector("#generateButton").addEventListener("click", generateCharacterDescription);
+

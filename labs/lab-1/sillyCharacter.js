@@ -32,7 +32,7 @@ display the character's attributes in a creative and humorous way.
 
 */
 
-//STEP ONE
+
 // Declare and initialize variables
 let characterName = "Mr. Nugget"; //string
 let age = 21; //number
@@ -42,6 +42,7 @@ let favouriteFood = "pizza"; //string
 
 
 // Function to generate a random character description
+
 
 
 // Functions to update character's age

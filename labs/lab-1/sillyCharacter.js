@@ -42,8 +42,15 @@ let favouriteFood = "pizza"; //string
 
 
 // Function to generate a random character description
+function generateCharacterDescription() {
 
+    //create a character description 
+    let description = "This is " + characterName + ", a " + age + "-year-old superhero who loves " + favouriteFood + " and has the power of " + specialPowers[0] + "!";
 
+    //display the description on the webpage
+    document.querySelector("#characterDescription").textContent = description;
+
+}
 
 // Functions to update character's age
 

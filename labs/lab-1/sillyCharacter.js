@@ -88,7 +88,11 @@ function generateCharacterDescription() {
 // Function to update the character's description after changing age
 
 
+
 // ADD EVENT LISTENERS FOR BUTTONS USING QUERYSELECTOR
 //runs the character description function when the generate button is clicked
 document.querySelector("#generateButton").addEventListener("click", generateCharacterDescription);
-
+//increases age when the button is clicked
+document.querySelector("#increaseAgeButton").addEventListener("click", increaseAge);
+//decreases age when the button is clicked
+document.querySelector("#decreaseAgeButton").addEventListener("click", decreaseAge);

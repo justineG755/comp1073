@@ -44,7 +44,7 @@ let favouriteFood = "pizza"; //string
 // Function to generate a random character description
 function generateCharacterDescription() {
 
-    //create a character description 
+    //create a character description (concantenation)
     let description = "This is " + characterName + ", a " + age + "-year-old superhero who loves " + favouriteFood + " and has the power of " + specialPowers[0] + "!";
 
     //display the description on the webpage
@@ -61,3 +61,5 @@ function generateCharacterDescription() {
 
 
 // Add event listeners for buttons using querySelector
+//runs the character description function when the generate button is clicked
+document.querySelector("#generateButton").addEventListener("click", generateCharacterDescription);

@@ -97,8 +97,13 @@ function decreaseAge() {
 }
 
 
-// Function to update the character's description after changing age
+//FUNCTION TO UPDATE THE CHARACTER'S DESCRIPTION 
+function updateCharacterDescription() {
 
+    description = "This is " + characterName + ", a " + age + "-year-old superhero who loves " + favouriteFood + " and can " + powerDescription + "!";
+
+    document.querySelector("#characterDescription").textContent = description;
+}
 
 
 // ADD EVENT LISTENERS FOR BUTTONS USING QUERYSELECTOR

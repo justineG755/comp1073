@@ -33,12 +33,17 @@ display the character's attributes in a creative and humorous way.
 */
 
 
+
+
 //DECLARE AND INTIALIZE VARIABLES
 let characterName = "Mr. Nugget"; //string
 let age = 21; // number 
 let isSuperhero = true; //boolean
 let specialPowers = ["flying", "super speed", "super strength", "teleportation", "telekinesis"]; //array
 let favouriteFood = "pizza"; //string
+
+//variable for power description     
+let powerDescription = "";
 
 
 //FUNCTION TO GENERATE A RANDOM CHARACTER DESCRIPTION
@@ -49,9 +54,6 @@ function generateCharacterDescription() {
 
     //picks a random power from the specialPowers array     
     let randomPower = specialPowers[Math.floor(Math.random() * specialPowers.length)];
-
-    //variable for power description     
-    let powerDescription = "";
 
     //power descriptions for each power     
     if (randomPower === "flying") {
@@ -80,9 +82,19 @@ function generateCharacterDescription() {
     console.log(randomPower);
 }
 
+
 //FUNCTION TO UPDATE CHARACTERS AGE
+//increase age
+function increaseAge() {
+    age++;
+    updateCharacterDescription();
+}
 
-
+//decrease age
+function decreaseAge() {
+    age--;
+    updateCharacterDescription();
+}
 
 
 // Function to update the character's description after changing age
@@ -92,7 +104,9 @@ function generateCharacterDescription() {
 // ADD EVENT LISTENERS FOR BUTTONS USING QUERYSELECTOR
 //runs the character description function when the generate button is clicked
 document.querySelector("#generateButton").addEventListener("click", generateCharacterDescription);
+
 //increases age when the button is clicked
 document.querySelector("#increaseAgeButton").addEventListener("click", increaseAge);
+
 //decreases age when the button is clicked
 document.querySelector("#decreaseAgeButton").addEventListener("click", decreaseAge);

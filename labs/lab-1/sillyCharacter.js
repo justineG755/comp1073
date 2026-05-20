@@ -72,6 +72,17 @@ function generateCharacterDescription() {
         powerDescription = "move objects using only brain power";
     }
 
+    //changes favourite food based on age
+    if (age < 20) {
+        favouriteFood = "chicken nuggets";
+    }
+    else if (age < 60) {
+        favouriteFood = "pizza";
+    }
+    else {
+        favouriteFood = "soup";
+    }
+
     //create a character description (concantenation)
     let description = "This is " + characterName + ", a " + age + "-year-old superhero who loves " + favouriteFood + " and can " + powerDescription + "!";
 

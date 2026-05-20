@@ -29,13 +29,12 @@ Create and Manipulate Strings:
 Use string manipulation to generate a funny description of the character 
 based on the data. You can concatenate strings or use template literals to 
 display the character's attributes in a creative and humorous way.
-
 */
 
 
-
-
+/********************************/
 //DECLARE AND INTIALIZE VARIABLES
+/********************************/
 let characterName = "Racoon Man"; //string
 let age = 21; // number 
 let isSuperhero = true; //boolean
@@ -46,7 +45,9 @@ let favouriteFood = "pizza"; //string
 let powerDescription = "";
 
 
+/****************************************************/
 //FUNCTION TO GENERATE A RANDOM CHARACTER DESCRIPTION
+/****************************************************/
 function generateCharacterDescription() {
 
     //generates a randon number for age
@@ -94,8 +95,11 @@ function generateCharacterDescription() {
 }
 
 
+/***********************************/
 //FUNCTION TO UPDATE CHARACTERS AGE
+/***********************************/
 function increaseAge() {
+
     //increase age
     age++;
 
@@ -104,6 +108,7 @@ function increaseAge() {
 }
 
 function decreaseAge() {
+
     //decrease age
     age--;
 
@@ -112,7 +117,9 @@ function decreaseAge() {
 }
 
 
+/***********************************/
 //FUNCTION TO UPDATE CHARACTERS NAME
+/***********************************/
 function updateName() {
 
     //get the value from the input box
@@ -123,16 +130,22 @@ function updateName() {
 }
 
 
+/***********************************************/
 //FUNCTION TO UPDATE THE CHARACTER'S DESCRIPTION 
+/***********************************************/
 function updateCharacterDescription() {
 
+    //updates the character description
     description = "This is " + characterName + ", a " + age + "-year-old superhero who loves " + favouriteFood + " and can " + powerDescription + "!";
 
+    //display on the webpage
     document.querySelector("#characterDescription").textContent = description;
 }
 
 
+/*****************************************************/
 // ADD EVENT LISTENERS FOR BUTTONS USING QUERYSELECTOR
+/*****************************************************/
 //runs the character description function when the generate button is clicked
 document.querySelector("#generateButton").addEventListener("click", generateCharacterDescription);
 

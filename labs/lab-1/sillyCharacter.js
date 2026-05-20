@@ -36,7 +36,7 @@ display the character's attributes in a creative and humorous way.
 
 
 //DECLARE AND INTIALIZE VARIABLES
-let characterName = "Mr. Nugget"; //string
+let characterName = "Racoon Man"; //string
 let age = 21; // number 
 let isSuperhero = true; //boolean
 let specialPowers = ["flying", "super speed", "super strength", "teleportation", "telekinesis"]; //array
@@ -84,15 +84,30 @@ function generateCharacterDescription() {
 
 
 //FUNCTION TO UPDATE CHARACTERS AGE
-//increase age
 function increaseAge() {
+    //increase age
     age++;
+
+    //updates the character description
     updateCharacterDescription();
 }
 
-//decrease age
 function decreaseAge() {
+    //decrease age
     age--;
+
+    //updates the character description
+    updateCharacterDescription();
+}
+
+
+//FUNCTION TO UPDATE CHARACTERS NAME
+function updateName() {
+
+    //get the value from the input box
+    characterName = document.querySelector("#nameInput").value;
+
+    //updates the character description
     updateCharacterDescription();
 }
 
@@ -115,3 +130,6 @@ document.querySelector("#increaseAgeButton").addEventListener("click", increaseA
 
 //decreases age when the button is clicked
 document.querySelector("#decreaseAgeButton").addEventListener("click", decreaseAge);
+
+//updates name when the button is clicked
+document.querySelector("#updateNameButton").addEventListener("click", updateName);

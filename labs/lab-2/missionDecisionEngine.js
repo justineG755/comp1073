@@ -18,6 +18,10 @@ if (health < 30 && enemyNearby === true)
     }
 
 //low resource warning
+else if (ammo < 5 || shield === false) 
+    {
+        output.textContent = "Warning: Low Resources";
+    }
 
 //mid mission status
 

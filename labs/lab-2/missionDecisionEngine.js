@@ -1,6 +1,6 @@
 
 //select the output paragraph
-const output = document.querySelector('#missionStatus');
+const output = document.querySelector("#missionStatus");
 
 //mission variables
 let health = 65;
@@ -14,7 +14,7 @@ let enemyNearby = true;
 //critical failure
 if (health < 30 && enemyNearby === true) 
     {
-        output.textContent = 'CRITICAL ALERT: Immediate Evacuation Required';
+        output.textContent = "CRITICAL ALERT: Immediate Evacuation Required";
     }
 
 //low resource warning
@@ -30,6 +30,10 @@ else if (missionProgress >= 1 && missionProgress <= 70)
     }
 
 //high progress status
+else if (missionProgress > 70 && enemyNearby === false)
+    {
+        output.textContent = "Approaching Mission Completion";
+    }
 
 //mission complete
 

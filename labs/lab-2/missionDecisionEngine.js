@@ -36,5 +36,9 @@ else if (missionProgress > 70 && enemyNearby === false)
     }
 
 //mission complete
+else if (missionProgress === 100) 
+    {
+    output.textContent = "Mission Complete Successfully";
+    }
 
 //default state

@@ -6,10 +6,12 @@ const output = document.querySelector("#missionStatus");
 let health = 65;
 let ammo = 8;
 let shield = true;
-let missionProgress = 100;
-let enemyNearby = false;
+let missionProgress = 40;
+let enemyNearby = true;
 
-//CONDITIONAL STATEMENTS
+/*************************/
+ //CONDITIONAL STATEMENTS
+/*************************/
 
 //critical failure
 if (health < 30 && enemyNearby === true) 

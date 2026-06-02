@@ -42,3 +42,6 @@ else if (missionProgress === 100)
     }
 
 //default state
+else{
+    output.textContent = "System Stable";
+    }

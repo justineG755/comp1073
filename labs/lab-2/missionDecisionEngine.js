@@ -6,8 +6,8 @@ const output = document.querySelector("#missionStatus");
 let health = 65;
 let ammo = 8;
 let shield = true;
-let missionProgress = 40;
-let enemyNearby = true;
+let missionProgress = 100;
+let enemyNearby = false;
 
 //CONDITIONAL STATEMENTS
 
@@ -23,6 +23,12 @@ else if (ammo < 5 || shield === false)
         output.textContent = "Warning: Low Resources";
     }
 
+//mission complete
+else if (missionProgress === 100) 
+    {
+    output.textContent = "Mission Complete Successfully";
+    }
+
 //mid mission status
 else if (missionProgress >= 1 && missionProgress <= 70) 
     {
@@ -33,12 +39,6 @@ else if (missionProgress >= 1 && missionProgress <= 70)
 else if (missionProgress > 70 && enemyNearby === false)
     {
         output.textContent = "Approaching Mission Completion";
-    }
-
-//mission complete
-else if (missionProgress === 100) 
-    {
-    output.textContent = "Mission Complete Successfully";
     }
 
 //default state

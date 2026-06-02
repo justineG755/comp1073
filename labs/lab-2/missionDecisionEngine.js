@@ -24,6 +24,10 @@ else if (ammo < 5 || shield === false)
     }
 
 //mid mission status
+else if (missionProgress >= 1 && missionProgress <= 70) 
+    {
+        output.textContent = "Mission In Progress";
+    }
 
 //high progress status
 

@@ -1,4 +1,8 @@
 
+/************/
+ //VARIABLES
+/************/
+
 // mission agent types array
 const agentTypes = ["Spy","Hacker","Scout", "Assassin", "Infiltrator"];
 
@@ -13,3 +17,31 @@ const missionObjectives = ["Gather Intel", "Rescue Hostages", "Collect Secret Fi
 
 // mission risk level array
 const riskLevels = ["Low", "Medium", "High", "Extreme"];
+
+// selection indexes
+let agentIndex = 0;
+let locationIndex = 0;
+let weaponIndex = 0;
+let objectiveIndex = 0;
+let riskIndex = 0;
+
+
+function changeAgent() {
+
+}
+
+function changeLocation() {
+    
+}
+
+function changeWeapon() {
+    
+}
+
+function changeObjective() {
+    
+}
+
+function changeRisk() {
+    
+}

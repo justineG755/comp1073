@@ -18,7 +18,8 @@ const missionObjectives = ["Gather Intel", "Rescue Hostages", "Collect Secret Fi
 // mission risk level array
 const riskLevels = ["Low", "Medium", "High", "Extreme"];
 
-const missionStatus = document.querySelector("#missionOutput");
+//mission output paragraph
+const missionOutput = document.querySelector("#missionOutput");
 
 // selection indexes
 let agentIndex = -1;
@@ -31,6 +32,7 @@ let riskIndex = -1;
 //BUTTON FUNCTIONS
 /*******************/
 
+//function to change agent type
 function changeAgent() {
     // move to the next index in the array
     agentIndex++;
@@ -41,10 +43,10 @@ function changeAgent() {
     }
 
     // display the selected agent on the page
-    document.querySelector("#agentDisplay").textContent =
-        agentTypes[agentIndex];
+    document.querySelector("#agentDisplay").textContent = agentTypes[agentIndex];
 }
 
+//function to change mission location
 function changeLocation() {
 
     locationIndex++;
@@ -53,11 +55,10 @@ function changeLocation() {
         locationIndex = 0;
     }
 
-    document.querySelector("#locationDisplay").textContent =
-        missionLocations[locationIndex];
-
+    document.querySelector("#locationDisplay").textContent = missionLocations[locationIndex];
 }
 
+//function to change weapon
 function changeWeapon() {
 
     weaponIndex++;
@@ -66,12 +67,10 @@ function changeWeapon() {
         weaponIndex = 0;
     }
 
-    document.querySelector("#weaponDisplay").textContent =
-        weaponLoadouts[weaponIndex];
-
-
+    document.querySelector("#weaponDisplay").textContent = weaponLoadouts[weaponIndex];
 }
 
+//function to change mission objective
 function changeObjective() {
 
     objectiveIndex++;
@@ -80,12 +79,10 @@ function changeObjective() {
         objectiveIndex = 0;
     }
 
-    document.querySelector("#objectiveDisplay").textContent =
-        missionObjectives[objectiveIndex];
-
-
+    document.querySelector("#objectiveDisplay").textContent = missionObjectives[objectiveIndex];
 }
 
+//function to change risk level
 function changeRisk() {
 
     riskIndex++;
@@ -94,30 +91,29 @@ function changeRisk() {
         riskIndex = 0;
     }
 
-    document.querySelector("#riskDisplay").textContent =
-        riskLevels[riskIndex];
+    document.querySelector("#riskDisplay").textContent = riskLevels[riskIndex];
 }
 
 
-function generateMission(){
+//function to generate mission briefing
+function generateMission() {
 
-if (agentIndex === -1 || locationIndex === -1 || weaponIndex === -1 || objectiveIndex === -1 || riskIndex === -1) {
+    // check if all mission selections have been made
+    if (agentIndex === -1 || locationIndex === -1 || weaponIndex === -1 || objectiveIndex === -1 || riskIndex === -1) {
 
-    missionOutput.textContent =
-        "** Please complete all mission selections!! **";
+        // display warning if selections are incomplete
+        missionOutput.textContent = "** Please complete all mission selections!! **";
 
-} else {
-
-    missionOutput.textContent =
-        "MISSION BRIEFING: **Agent: " + agentTypes[agentIndex] +
-        " **Location: " + missionLocations[locationIndex] +
-        " **Weapon: " + weaponLoadouts[weaponIndex] +
-        " **Objective: " + missionObjectives[objectiveIndex] +
-        " **Risk level: " + riskLevels[riskIndex] ;
-
-        }
+    } else {
+        // display the mission briefing if all selection are made
+        missionOutput.textContent =
+            "MISSION BRIEFING: Agent: " + agentTypes[agentIndex] + " Location: " + missionLocations[locationIndex] + " Weapon: " + weaponLoadouts[weaponIndex] + " Objective: " + missionObjectives[objectiveIndex] + " Risk level: " + riskLevels[riskIndex];
+    }
 }
 
+/*******************/
+ // EVENT LISTENERS
+/*******************/
 
 document.querySelector("#agentBtn")
     .addEventListener("click", changeAgent);

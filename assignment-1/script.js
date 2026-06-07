@@ -45,23 +45,38 @@ function changeAgent() {
 
 function changeLocation() {
 
-    
-    
+    locationIndex++;
+
+    if (locationIndex >= missionLocations.length) {
+        locationIndex = 0;
+    }
+
+    document.querySelector("#locationDisplay").textContent =
+        missionLocations[locationIndex];
+
 }
 
 function changeWeapon() {
 
-    weaponIndex++;
+    
     
 }
 
 function changeObjective() {
+
+    
     
 }
 
 function changeRisk() {
+
+   
     
 }
 
+
 document.querySelector("#agentBtn")
     .addEventListener("click", changeAgent);
+
+document.querySelector("#locationBtn")
+    .addEventListener("click", changeLocation);

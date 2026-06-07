@@ -58,6 +58,14 @@ function changeLocation() {
 
 function changeWeapon() {
 
+    weaponIndex++;
+
+    if (weaponIndex >= weaponLoadouts.length){
+        weaponIndex = 0;
+    }
+
+    document.querySelector("#weaponDisplay").textContent = 
+        weaponLoadouts[weaponIndex];
     
     
 }
@@ -80,3 +88,6 @@ document.querySelector("#agentBtn")
 
 document.querySelector("#locationBtn")
     .addEventListener("click", changeLocation);
+
+document.querySelector("#weaponBtn")
+    .addEventListener("click", changeWeapon);

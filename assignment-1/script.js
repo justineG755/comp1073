@@ -1,10 +1,10 @@
 
 /************/
- //VARIABLES
+//VARIABLES
 /************/
 
 // mission agent types array
-const agentTypes = ["Spy","Hacker","Scout", "Assassin", "Infiltrator"];
+const agentTypes = ["Spy", "Hacker", "Scout", "Assassin", "Infiltrator"];
 
 // mission location array
 const missionLocations = ["Abandoned Warehouse", "Underground Bunker", "Enemy Headquarters", "Secret Lab", "Space Station"];
@@ -18,19 +18,21 @@ const missionObjectives = ["Gather Intel", "Rescue Hostages", "Collect Secret Fi
 // mission risk level array
 const riskLevels = ["Low", "Medium", "High", "Extreme"];
 
+const missionStatus = document.querySelector("#missionOutput");
+
 // selection indexes
-let agentIndex = 0;
-let locationIndex = 0;
-let weaponIndex = 0;
-let objectiveIndex = 0;
-let riskIndex = 0;
+let agentIndex = -1;
+let locationIndex = -1;
+let weaponIndex = -1;
+let objectiveIndex = -1;
+let riskIndex = -1;
 
 /*******************/
- //BUTTON FUNCTIONS
+//BUTTON FUNCTIONS
 /*******************/
 
 function changeAgent() {
-// move to the next index in the array
+    // move to the next index in the array
     agentIndex++;
 
     //when end of the array start over
@@ -60,42 +62,60 @@ function changeWeapon() {
 
     weaponIndex++;
 
-    if (weaponIndex >= weaponLoadouts.length){
+    if (weaponIndex >= weaponLoadouts.length) {
         weaponIndex = 0;
     }
 
-    document.querySelector("#weaponDisplay").textContent = 
+    document.querySelector("#weaponDisplay").textContent =
         weaponLoadouts[weaponIndex];
-    
-    
+
+
 }
 
 function changeObjective() {
 
     objectiveIndex++;
 
-    if (objectiveIndex >= missionObjectives.length){
+    if (objectiveIndex >= missionObjectives.length) {
         objectiveIndex = 0;
     }
 
-    document.querySelector("#objectiveDisplay").textContent = 
+    document.querySelector("#objectiveDisplay").textContent =
         missionObjectives[objectiveIndex];
-        
-    
+
+
 }
 
 function changeRisk() {
 
     riskIndex++;
 
-    if (riskIndex >= riskLevels.length){
+    if (riskIndex >= riskLevels.length) {
         riskIndex = 0;
     }
 
-    document.querySelector("#riskDisplay").textContent = 
+    document.querySelector("#riskDisplay").textContent =
         riskLevels[riskIndex];
-   
-    
+}
+
+
+function generateMission(){
+
+if (agentIndex === -1 || locationIndex === -1 || weaponIndex === -1 || objectiveIndex === -1 || riskIndex === -1) {
+
+    missionOutput.textContent =
+        "** Please complete all mission selections!! **";
+
+} else {
+
+    missionOutput.textContent =
+        "MISSION BRIEFING: **Agent: " + agentTypes[agentIndex] +
+        " **Location: " + missionLocations[locationIndex] +
+        " **Weapon: " + weaponLoadouts[weaponIndex] +
+        " **Objective: " + missionObjectives[objectiveIndex] +
+        " **Risk level: " + riskLevels[riskIndex] ;
+
+        }
 }
 
 
@@ -113,3 +133,6 @@ document.querySelector("#objectiveBtn")
 
 document.querySelector("#riskBtn")
     .addEventListener("click", changeRisk);
+
+document.querySelector("#launchBtn")
+    .addEventListener("click", generateMission);

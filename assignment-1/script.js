@@ -86,6 +86,14 @@ function changeObjective() {
 
 function changeRisk() {
 
+    riskIndex++;
+
+    if (riskIndex >= riskLevels.length){
+        riskIndex = 0;
+    }
+
+    document.querySelector("#riskDisplay").textContent = 
+        riskLevels[riskIndex];
    
     
 }
@@ -102,3 +110,6 @@ document.querySelector("#weaponBtn")
 
 document.querySelector("#objectiveBtn")
     .addEventListener("click", changeObjective);
+
+document.querySelector("#riskBtn")
+    .addEventListener("click", changeRisk);

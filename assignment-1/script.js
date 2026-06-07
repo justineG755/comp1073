@@ -94,6 +94,7 @@ function changeRisk() {
     document.querySelector("#riskDisplay").textContent = riskLevels[riskIndex];
 }
 
+
 //function to generate mission briefing
 function generateMission() {
 
@@ -121,11 +122,12 @@ function generateMission() {
             riskSentence = "Survival probability is low!";
         }
 
-        // display the mission briefing if all selection are made
+        // display the mission briefing if all selections are made
         missionOutput.textContent =
             "MISSION BRIEFING Agent: " + agentTypes[agentIndex] + " Location: " + missionLocations[locationIndex] + " Weapon: " + weaponLoadouts[weaponIndex] + " Objective: " + missionObjectives[objectiveIndex] + " Risk level: " + riskLevels[riskIndex] + " Safety Status: " + riskSentence;
     }
 }
+
 
 // function to reset all mission selections
 function resetMission() {
@@ -147,6 +149,38 @@ function resetMission() {
     // clear mission output
     missionOutput.textContent = "Mission details will appear here...";
 }
+
+
+// function to generate random mission selections
+function randomMission() {
+
+    // generate random indexes 
+    agentIndex = Math.floor(Math.random() * agentTypes.length);
+    locationIndex = Math.floor(Math.random() * missionLocations.length);
+    weaponIndex = Math.floor(Math.random() * weaponLoadouts.length);
+    objectiveIndex = Math.floor(Math.random() * missionObjectives.length);
+    riskIndex = Math.floor(Math.random() * riskLevels.length);
+
+    // display random selections
+    document.querySelector("#agentDisplay").textContent =
+        agentTypes[agentIndex];
+
+    document.querySelector("#locationDisplay").textContent =
+        missionLocations[locationIndex];
+
+    document.querySelector("#weaponDisplay").textContent =
+        weaponLoadouts[weaponIndex];
+
+    document.querySelector("#objectiveDisplay").textContent =
+        missionObjectives[objectiveIndex];
+
+    document.querySelector("#riskDisplay").textContent =
+        riskLevels[riskIndex];
+
+    //get the mission briefing with the random selections
+    generateMission();
+}
+
 
 /*******************/
  // EVENT LISTENERS
@@ -172,3 +206,6 @@ document.querySelector("#launchBtn")
 
 document.querySelector("#resetBtn")
     .addEventListener("click", resetMission);
+
+document.querySelector("#randomBtn")
+    .addEventListener("click", randomMission);

@@ -124,7 +124,7 @@ function generateMission() {
 
         // display the mission briefing if all selections are made
         missionOutput.textContent =
-            "MISSION BRIEFING Agent: " + agentTypes[agentIndex] + " Location: " + missionLocations[locationIndex] + " Weapon: " + weaponLoadouts[weaponIndex] + " Objective: " + missionObjectives[objectiveIndex] + " Risk level: " + riskLevels[riskIndex] + " Safety Status: " + riskSentence;
+            "Agent: " + agentTypes[agentIndex] + " \nLocation: " + missionLocations[locationIndex] + " \nWeapon: " + weaponLoadouts[weaponIndex] + " \nObjective: " + missionObjectives[objectiveIndex] + " \nRisk level: " + riskLevels[riskIndex] + " \nSafety Status: " + riskSentence;
     }
 }
 

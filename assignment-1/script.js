@@ -94,7 +94,6 @@ function changeRisk() {
     document.querySelector("#riskDisplay").textContent = riskLevels[riskIndex];
 }
 
-
 //function to generate mission briefing
 function generateMission() {
 
@@ -105,9 +104,26 @@ function generateMission() {
         missionOutput.textContent = "** Please complete all mission selections!! **";
 
     } else {
+
+        //safety mission status depending on risk level
+        let riskSentence = "";
+
+        if (riskLevels[riskIndex] === "Low") {
+            riskSentence = "Safe for deployment!";
+        }
+        else if (riskLevels[riskIndex] === "Medium") {
+            riskSentence = "Proceed with caution!";
+        }
+        else if (riskLevels[riskIndex] === "High") {
+            riskSentence = "High threat level detected!";
+        }
+        else if (riskLevels[riskIndex] === "Extreme") {
+            riskSentence = "Survival probability is low!";
+        }
+
         // display the mission briefing if all selection are made
         missionOutput.textContent =
-            "MISSION BRIEFING Agent: " + agentTypes[agentIndex] + " Location: " + missionLocations[locationIndex] + " Weapon: " + weaponLoadouts[weaponIndex] + " Objective: " + missionObjectives[objectiveIndex] + " Risk level: " + riskLevels[riskIndex];
+            "MISSION BRIEFING Agent: " + agentTypes[agentIndex] + " Location: " + missionLocations[locationIndex] + " Weapon: " + weaponLoadouts[weaponIndex] + " Objective: " + missionObjectives[objectiveIndex] + " Risk level: " + riskLevels[riskIndex] + " Safety Status: " + riskSentence;
     }
 }
 

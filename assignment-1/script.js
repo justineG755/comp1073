@@ -107,8 +107,29 @@ function generateMission() {
     } else {
         // display the mission briefing if all selection are made
         missionOutput.textContent =
-            "MISSION BRIEFING: Agent: " + agentTypes[agentIndex] + " Location: " + missionLocations[locationIndex] + " Weapon: " + weaponLoadouts[weaponIndex] + " Objective: " + missionObjectives[objectiveIndex] + " Risk level: " + riskLevels[riskIndex];
+            "MISSION BRIEFING Agent: " + agentTypes[agentIndex] + " Location: " + missionLocations[locationIndex] + " Weapon: " + weaponLoadouts[weaponIndex] + " Objective: " + missionObjectives[objectiveIndex] + " Risk level: " + riskLevels[riskIndex];
     }
+}
+
+// function to reset all mission selections
+function resetMission() {
+
+    // reset indexes
+    agentIndex = -1;
+    locationIndex = -1;
+    weaponIndex = -1;
+    objectiveIndex = -1;
+    riskIndex = -1;
+
+    // clear displays
+    document.querySelector("#agentDisplay").textContent = "None Selected";
+    document.querySelector("#locationDisplay").textContent = "None Selected";
+    document.querySelector("#weaponDisplay").textContent = "None Selected";
+    document.querySelector("#objectiveDisplay").textContent = "None Selected";
+    document.querySelector("#riskDisplay").textContent = "None Selected";
+
+    // clear mission output
+    missionOutput.textContent = "Mission details will appear here...";
 }
 
 /*******************/
@@ -132,3 +153,6 @@ document.querySelector("#riskBtn")
 
 document.querySelector("#launchBtn")
     .addEventListener("click", generateMission);
+
+document.querySelector("#resetBtn")
+    .addEventListener("click", resetMission);

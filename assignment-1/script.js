@@ -72,7 +72,15 @@ function changeWeapon() {
 
 function changeObjective() {
 
-    
+    objectiveIndex++;
+
+    if (objectiveIndex >= missionObjectives.length){
+        objectiveIndex = 0;
+    }
+
+    document.querySelector("#objectiveDisplay").textContent = 
+        missionObjectives[objectiveIndex];
+        
     
 }
 
@@ -91,3 +99,6 @@ document.querySelector("#locationBtn")
 
 document.querySelector("#weaponBtn")
     .addEventListener("click", changeWeapon);
+
+document.querySelector("#objectiveBtn")
+    .addEventListener("click", changeObjective);

@@ -25,16 +25,33 @@ let weaponIndex = 0;
 let objectiveIndex = 0;
 let riskIndex = 0;
 
+/*******************/
+ //BUTTON FUNCTIONS
+/*******************/
 
 function changeAgent() {
+// move to the next index in the array
+    agentIndex++;
 
+    //when end of the array start over
+    if (agentIndex >= agentTypes.length) {
+        agentIndex = 0;
+    }
+
+    // display the selected agent on the page
+    document.querySelector("#agentDisplay").textContent =
+        agentTypes[agentIndex];
 }
 
 function changeLocation() {
+
+    
     
 }
 
 function changeWeapon() {
+
+    weaponIndex++;
     
 }
 
@@ -45,3 +62,6 @@ function changeObjective() {
 function changeRisk() {
     
 }
+
+document.querySelector("#agentBtn")
+    .addEventListener("click", changeAgent);

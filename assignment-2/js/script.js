@@ -33,11 +33,23 @@ class Pizza {
         this.instructions = instructions;
     }
 
-        //pizza order description
-        pizzaDescription() {
-            return `You ordered ${this.quantity} ${this.size} ${this.crust} crust pizza.`;
-        }
-    
+    //pizza order description
+    pizzaDescription() {
+        return `        Quantity: ${this.quantity}
+        Size: ${this.size}
+        Crust: ${this.crust}
+        Sauce: ${this.sauce}
+        Cheese: ${this.cheese}
+
+        Toppings:
+            • ${this.toppings.join("\n            • ")}
+
+        Seasonings:
+            • ${this.seasoning.join("\n            • ")}
+
+        Special Instructions:
+            ${this.instructions}`;
+    }
 
 }
 
@@ -88,7 +100,7 @@ pizzaForm.addEventListener("submit", function (event) {
         seasoning,
         quantity,
         instructions
-    
+
     );
 
     orderOutput.textContent = pizzaOrder.pizzaDescription();

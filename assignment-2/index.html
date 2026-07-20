@@ -29,7 +29,7 @@
             <input type="email" id="email" name="email">
 
             <p>Order Type:</p>
-            
+
             <input type="radio" id="pickup" name="orderType" value="Pickup" required>
             <label>Pickup</label>
 
@@ -54,9 +54,124 @@
         </fieldset>
 
         <fieldset>
-             <legend>Pizza Details</legend>
+            <legend>Pizza Details</legend>
+
+            <label>Pizza Size:</label>
+            <select id="size" name="size" required>
+                <option value="">Select a size</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="Extra Large">Extra Large</option>
+            </select>
+
+            <label>Crust Type:</label>
+            <select id="crust" name="crust" required>
+                <option value="">Select a crust</option>
+                <option value="Regular">Regular</option>
+                <option value="Thin Crust">Thin Crust</option>
+                <option value="Cracker Crust">Cracker Crust</option>
+                <option value="Stuffed Crust">Stuffed Crust</option>
+                <option value="Gluten Free">Gluten-Free</option>
+            </select>
+
+            <label>Sauce:</label>
+            <select id="sauce" name="sauce" required>
+                <option value="">Select a sauce</option>
+                <option value="Pizza Sauce">Pizza Sauce</option>
+                <option value="Alfredo">Alfredo</option>
+                <option value="BBQ">BBQ</option>
+                <option value="Garlic Parm">Garlic Parmesan</option>
+                <option value="None">No Sauce</option>
+            </select>
+
+            <p>Cheese:</p>
+            <input type="radio" id="lightCheese" name="cheese" value="Light" required>
+            <label>Light</label>
+
+            <input type="radio" id="regularCheese" name="cheese" value="Regular">
+            <label>Regular</label>
+
+            <input type="radio" id="extraCheese" name="cheese" value="Extra">
+            <label>Extra</label>
+
+            <input type="radio" id="noCheese" name="cheese" value="None">
+            <label>None</label>
+
+            <p>Toppings:</p>
+
+            <h3>Meat Toppings</h3>
+
+            <input type="checkbox" id="pepperoni" name="toppings" value="Pepperoni">
+            <label>Pepperoni</label><br>
+
+            <input type="checkbox" id="bacon" name="toppings" value="Bacon">
+            <label>Bacon</label><br>
+
+            <input type="checkbox" id="ham" name="toppings" value="Ham">
+            <label>Ham</label><br>
+
+            <input type="checkbox" id="sausage" name="toppings" value="Italian Sausage">
+            <label>Italian Sausage</label><br>
+
+            <input type="checkbox" id="chicken" name="toppings" value="Grilled Chicken">
+            <label>Grilled Chicken</label>
+
+            <h3>Vegetable Toppings</h3>
+
+            <input type="checkbox" id="mushrooms" name="toppings" value="Mushrooms">
+            <label>Mushrooms</label><br>
+
+            <input type="checkbox" id="greenPeppers" name="toppings" value="Green Peppers">
+            <label>Green Peppers</label><br>
+
+            <input type="checkbox" id="onions" name="toppings" value="Onions">
+            <label>Onions</label><br>
+
+            <input type="checkbox" id="blackOlives" name="toppings" value="Black Olives">
+            <label>Black Olives</label><br>
+
+            <input type="checkbox" id="pineapple" name="toppings" value="Pineapple">
+            <label>Pineapple</label><br>
+
+            <input type="checkbox" id="tomatoes" name="toppings" value="Tomatoes">
+            <label>Tomatoes</label><br>
+
+            <input type="checkbox" id="spinach" name="toppings" value="Spinach">
+            <label>Spinach</label><br>
+
+            <input type="checkbox" id="jalapenos" name="toppings" value="Jalapeños">
+            <label>Jalapeños</label><br>
+
+            <input type="checkbox" id="bananaPeppers" name="toppings" value="Banana Peppers">
+            <label>Banana Peppers</label><br>
+
+            <h3>Shake On Seasoning</h3>
+
+            <input type="checkbox" id="parmesan" name="seasoning" value="Parmesan">
+            <label>Parmesan Cheese</label><br>
+
+            <input type="checkbox" id="chiliFlakes" name="seasoning" value="Chili Flakes">
+            <label>Chili Flakes</label><br>
+
+            <input type="checkbox" id="italianSeasoning" name="seasoning" value="Oregeno">
+            <label>Oregeno</label><br>
+
+            <input type="checkbox" id="garlicSeasoning" name="seasoning" value="Garlic">
+            <label>Garlic & Herb</label><br>
+
+            <br>
+            <label>Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+            <br>
+            <label>Special Instructions:</label>
+            <textarea id="instructions" name="instructions" rows="4"
+                placeholder="Enter any special requests here (ex. well done, sqaure cut)"></textarea>
 
         </fieldset>
+
+        <button type="submit">Place Order</button>
 
     </form>
 

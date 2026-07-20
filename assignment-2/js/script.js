@@ -52,18 +52,25 @@ class Pizza {
 
     //pizza order description
     pizzaDescription() {
-    return `
+        let deliveryInfo = "";
+
+        //if statement to show address if they choose delivery
+        if (this.orderType === "Delivery") {
+            deliveryInfo = `
+Street: ${this.street}
+City: ${this.city}
+Postal Code: ${this.postalCode}
+`;
+        }
+
+        return `
 Order Number: #${this.orderNumber}
 
 Name: ${this.fullName}
 Phone: ${this.phone}
 Email: ${this.email}
 Order Type: ${this.orderType}
-
-Street: ${this.street}
-City: ${this.city}
-Postal Code: ${this.postalCode}
-
+${deliveryInfo}
 Quantity: ${this.quantity}
 Size: ${this.size}
 Crust: ${this.crust}
@@ -80,7 +87,7 @@ Special Instructions:
 ${this.instructions || "None"}
 
 Thank you for your order!`;
-}
+    }
 
 }
 
@@ -105,6 +112,8 @@ pizzaForm.addEventListener("submit", function (event) {
     const crust = document.querySelector("#crust").value;
     const sauce = document.querySelector("#sauce").value;
     const cheese = document.querySelector('input[name="cheese"]:checked').value;
+
+    //code help from https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
 
     //array to store selected toppings
     const toppings = [];

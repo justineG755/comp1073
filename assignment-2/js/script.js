@@ -12,6 +12,7 @@ document.body.prepend(studentInfo);
 //pizza class
 class Pizza {
     //declaring properties
+    orderNumber;
     fullName;
     phone;
     email;
@@ -30,7 +31,8 @@ class Pizza {
 
 
     //pizza contructor
-    constructor(fullName, phone, email, orderType, street, city, postalCode, size, crust, sauce, cheese, toppings, seasoning, quantity, instructions) {
+    constructor(orderNumber, fullName, phone, email, orderType, street, city, postalCode, size, crust, sauce, cheese, toppings, seasoning, quantity, instructions) {
+        this.orderNumber = orderNumber;
         this.fullName = fullName;
         this.phone = phone;
         this.email = email;
@@ -51,6 +53,8 @@ class Pizza {
     //pizza order description
     pizzaDescription() {
     return `
+Order Number: #${this.orderNumber}
+
 Name: ${this.fullName}
 Phone: ${this.phone}
 Email: ${this.email}
@@ -93,6 +97,9 @@ pizzaForm.addEventListener("submit", function (event) {
     const city = document.querySelector("#city").value;
     const postalCode = document.querySelector("#postalCode").value;
 
+    //generate random 4 digit number
+    const orderNumber = Math.floor(1000 + Math.random() * 9000);
+
     //store pizza details
     const size = document.querySelector("#size").value;
     const crust = document.querySelector("#crust").value;
@@ -119,6 +126,7 @@ pizzaForm.addEventListener("submit", function (event) {
 
     //pizza object
     const pizzaOrder = new Pizza(
+        orderNumber,
         fullName,
         phone,
         email,
@@ -133,7 +141,7 @@ pizzaForm.addEventListener("submit", function (event) {
         toppings,
         seasoning,
         quantity,
-        instructions,
+        instructions
     );
 
     orderOutput.textContent = pizzaOrder.pizzaDescription();

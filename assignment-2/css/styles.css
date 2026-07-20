@@ -1,3 +1,129 @@
+
+/* page background and font */
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #eef5ee;
+    padding: 32px;
+}
+
+/* main heading */
+h1 {
+    text-align: center;
+    color: #4f7942;
+}
+
+/* welcome message  */
+body > p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* form and order summary container */
+form,
+#orderSummary {
+    max-width: 1000px;
+    margin: auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* space above the order summary  */
+#orderSummary {
+    margin-top: 30px;
+}
+
+/* customer and pizza detail fieldset */
+fieldset {
+    border: 2px solid #b8d8b8;
+    border-radius: 10px;
+    padding: 34px;
+    margin-bottom: 20px;
+}
+
+/* fieldset titles */
+legend {
+    color: #4f7942;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* section headings */
+h3 {
+    color: #4f7942;
+}
+
+/* labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* text boxes, drop-down lists, and text area */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* color of checkboxes and radio buttons */
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: #4f7942;
+    margin-right: 5px;
+}
+
+/* checkbox and radio labels beside their buttons  */
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    display: inline;
+    font-weight: normal;
+    margin-right: 12px;
+}
+
+/* delivery information section */
+#deliveryInfo {
+    background-color: #f4faf4;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* submit button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4f7942;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* button color when hovering */
+button:hover {
+    background-color: #3d6133;
+}
+
+/* order summary heading */
+#orderSummary h2 {
+    color: #4f7942;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 2px solid #b8d8b8;
+    padding-bottom: 10px;
+}
+
+/* spacing in the order summary output */
 #orderOutput {
     white-space: pre-wrap;
 }

@@ -134,15 +134,6 @@ pizzaForm.addEventListener("submit", function (event) {
         seasoning,
         quantity,
         instructions,
-        size,
-        crust,
-        sauce,
-        cheese,
-        toppings,
-        seasoning,
-        quantity,
-        instructions
-
     );
 
     orderOutput.textContent = pizzaOrder.pizzaDescription();

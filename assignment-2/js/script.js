@@ -12,6 +12,13 @@ document.body.prepend(studentInfo);
 //pizza class
 class Pizza {
     //declaring properties
+    fullName;
+    phone;
+    email;
+    orderType;
+    street;
+    city;
+    postalCode;
     size;
     crust;
     sauce;
@@ -21,8 +28,16 @@ class Pizza {
     quantity;
     instructions;
 
+
     //pizza contructor
-    constructor(size, crust, sauce, cheese, toppings, seasoning, quantity, instructions) {
+    constructor(fullName, phone, email, orderType, street, city, postalCode, size, crust, sauce, cheese, toppings, seasoning, quantity, instructions) {
+        this.fullName = fullName;
+        this.phone = phone;
+        this.email = email;
+        this.orderType = orderType;
+        this.street = street;
+        this.city = city;
+        this.postalCode = postalCode;
         this.size = size;
         this.crust = crust;
         this.sauce = sauce;
@@ -35,21 +50,33 @@ class Pizza {
 
     //pizza order description
     pizzaDescription() {
-        return `        Quantity: ${this.quantity}
-        Size: ${this.size}
-        Crust: ${this.crust}
-        Sauce: ${this.sauce}
-        Cheese: ${this.cheese}
+    return `
+Name: ${this.fullName}
+Phone: ${this.phone}
+Email: ${this.email}
+Order Type: ${this.orderType}
 
-        Toppings:
-            • ${this.toppings.join("\n            • ")}
+Street: ${this.street}
+City: ${this.city}
+Postal Code: ${this.postalCode}
 
-        Seasonings:
-            • ${this.seasoning.join("\n            • ")}
+Quantity: ${this.quantity}
+Size: ${this.size}
+Crust: ${this.crust}
+Sauce: ${this.sauce}
+Cheese: ${this.cheese}
 
-        Special Instructions:
-            ${this.instructions}`;
-    }
+Toppings:
+• ${this.toppings.join("\n• ") || "None"}
+
+Seasonings:
+• ${this.seasoning.join("\n• ") || "None"}
+
+Special Instructions:
+${this.instructions || "None"}
+
+Thank you for your order!`;
+}
 
 }
 
@@ -92,6 +119,21 @@ pizzaForm.addEventListener("submit", function (event) {
 
     //pizza object
     const pizzaOrder = new Pizza(
+        fullName,
+        phone,
+        email,
+        orderType,
+        street,
+        city,
+        postalCode,
+        size,
+        crust,
+        sauce,
+        cheese,
+        toppings,
+        seasoning,
+        quantity,
+        instructions,
         size,
         crust,
         sauce,

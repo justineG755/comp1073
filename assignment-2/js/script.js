@@ -153,6 +153,7 @@ pizzaForm.addEventListener("submit", function (event) {
         instructions
     );
 
+    // display order details
     orderOutput.textContent = pizzaOrder.pizzaDescription();
 
 });

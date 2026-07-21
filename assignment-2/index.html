@@ -4,18 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- page title -->
     <title>Pizza Ordering</title>
+    <!-- link css -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- link js -->
     <script src="js/script.js" defer></script>
 </head>
 
 <body>
+    <!-- heading -->
     <h1>Justine's Pizza Shop 🍕🌿</h1>
     <p>Welcome! Customize your pizza exactly the way you like it.</p>
 
+    <!-- pizza form -->
     <form id="pizzaForm">
 
         <fieldset>
+            <!-- customer information -->
             <legend>Customer Information</legend>
             <p>Please enter your contact information before ordering.</p>
 
@@ -28,6 +34,7 @@
             <label>Email:</label>
             <input type="email" id="email" name="email">
 
+            <!-- delivery or pick up -->
             <p>Order Type:</p>
 
             <input type="radio" id="pickup" name="orderType" value="Pickup" required>
@@ -54,6 +61,7 @@
         </fieldset>
 
         <fieldset>
+            <!-- pizza toppings and information -->
             <legend>Pizza Details</legend>
 
             <label>Pizza Size:</label>
@@ -171,10 +179,12 @@
 
         </fieldset>
 
+        
         <button type="submit">Place Order</button>
 
     </form>
 
+    <!-- order summary section -->
     <section id="orderSummary">
         <h2>Order Summary</h2>
         <div id="orderOutput"></div>

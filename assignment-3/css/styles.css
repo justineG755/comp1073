@@ -1,0 +1,93 @@
+/* page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff0f5;
+    color: #4a2c3a;
+    margin: 0;
+    padding: 20px;
+}
+
+/* main heading */
+h1 {
+    text-align: center;
+    color: #c94f7c;
+}
+
+/* search area */
+.searchArea {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* small paragrpah */
+header p {
+    text-align: center;
+}
+
+/* search input */
+input {
+    padding: 12px;
+    width: 276px;
+    border: 2px solid #e8a0b8;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* search button */
+button {
+    padding: 14px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #d96c95;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c94f7c;
+}
+
+/* movie results */
+#movieInformation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* movie cards */
+article {
+    background-color: white;
+    padding: 18px;
+    border: 2px solid #f2c4d3;
+    border-radius: 10px;
+}
+
+/* movie titles */
+article h2 {
+    text-align: center;
+    color: #c94f7c;
+}
+
+/* movie posters */
+article img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* movie information */
+article p {
+    line-height: 1.5;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #c94f7c;
+}

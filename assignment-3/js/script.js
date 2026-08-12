@@ -3,41 +3,49 @@ const studentInfo = document.createElement("p");
 studentInfo.textContent = "Justine Gounga - Student ID: 200641729";
 document.body.prepend(studentInfo);
 
-// api key
-const apiKey = "611df3cae4754c3fae5b210f0cefd7a3";
+//tmdb api information
+const baseURL = "https://api.themoviedb.org/3/search/movie";
+const key = "702999b56803635fb580bdf2d1f9214b";
+let url;
 
-//page elements
-const gameInput = document.getElementById("gameInput");
-const searchBtn = document.getElementById("searchBtn");
-const gameInformation = document.getElementById("gameInformation");
+// grab the html elements
+const movieInput = document.querySelector("#movieInput");
+const searchBtn = document.querySelector("#searchBtn");
+const movieInformation = document.querySelector("#movieInformation");
 
-//search when button is clicked
-searchBtn.addEventListener("click", searchGame);
+// search when the button is clicked
+searchBtn.addEventListener("click", searchMovies);
 
-function searchGame() {
-    const gameName = gameInput.value.trim();
+// functions
+function searchMovies() {
+    let movieName = movieInput.value.trim();
 
     // prevent an empty search
-    if (gameName === "") {
-        alert("Please enter a game title.");
+    if (movieName === "") {
+        alert("Please enter a movie title.");
         return;
     }
 
-    const url =
-        `https://api.rawg.io/api/games?key=${apiKey}&search=${encodeURIComponent(gameName)}`;
+    // build the complete api url
+    url = `${baseURL}?api_key=${key}&query=${encodeURIComponent(movieName)}`;
 
+    // send the request to the tmdb api
     fetch(url)
-        .then(response => {
+        .then((response) => {
+            // check whether the response was successful
             if (!response.ok) {
-                throw new Error("Unable to retrieve game data.");
+                throw new Error("Unable to retrieve movie data.");
             }
 
+            // convert the response into json
             return response.json();
         })
-        .then(data => {
-            console.log(data.results);
+        .then((json) => {
+            // pass the json data into the display function
+            console.log(json);
         })
-        .catch(error => {
-            console.log(error);
+        .catch((error) => {
+            // display an error message
+            movieInformation.textContent = error;
         });
 }
